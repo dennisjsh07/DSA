@@ -1,6 +1,3 @@
-
-
-
 var nums=[1,2,3];
 var result=[];
 function dfs(i,nums)
