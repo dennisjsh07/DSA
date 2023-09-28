@@ -39,7 +39,7 @@ function peakOfArray(){
     }
     
     function secondHalf(){
-      var low = peak;
+    var low = peak;
     var high = mountainArr.length-1;
     target = 3;
     var flag = false;

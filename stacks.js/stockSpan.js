@@ -1,30 +1,23 @@
-var a = [100, 80, 60, 70, 60, 75, 85];
-let ans = [];
+let s = [100, 80, 60, 70, 60, 75, 85];
 let stack = [];
-let index = [];
-let ansIndex = [];
-
-for(i = 0; i<a.length; i++){
-  while(a[i]>=a[stack[stack.length-1]] && stack.length>0){
+let ans = [];
+for(i = 0; i<s.length; i++){
+  while(s[stack[stack.length-1]]<=s[i]){
     stack.pop();
-    index.pop();
   }
+  
   if(stack.length === 0){
     ans[i] = -1;
-    ansIndex[i] = -1;
   } else{
     ans[i] = stack[stack.length-1];
-    ansIndex[i] = index[index.length-1];
   }
-  stack.push(a[i]);
-  index.push(i);
+  
+  stack.push(i);
 }
 
 console.log(ans);
-console.log(ansIndex);
-
 let b = [];
-for(i = 0; i<a.length; i++){
-  b.push(i - ansIndex[i]);
+for(i = 0; i<s.length; i++){
+  b.push(i - ans[i]);
 }
 console.log(b);

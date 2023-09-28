@@ -11,7 +11,6 @@ if(s.length !== t.length){
   flag = false;
 }
 
-let c = new Set();
 let d = new Map();
 let e = new Map();
 
@@ -32,7 +31,6 @@ for(i = 0; i<t.length; i++){
   }
 }
 
-// console.log(c);
 // console.log(d);
 // console.log(e);
 

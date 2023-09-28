@@ -14,7 +14,6 @@
 
 
 // initialise a QUEUE.
-
 class queue
 {
   constructor()
@@ -27,10 +26,7 @@ class queue
 var a=new queue();
 console.log(a);
 
-
-
 // insert elements inside the QUEUE.
-
 class queue
 {
   constructor()

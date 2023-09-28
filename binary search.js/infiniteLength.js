@@ -9,7 +9,7 @@ while(target>high){
   high = (high-temp+1)*2;
 }
 
-// console.log(low, high);
+console.log(low, high);
 var flag = false;
 while(low<=high){
   var mid = Math.floor((low+high)/2);

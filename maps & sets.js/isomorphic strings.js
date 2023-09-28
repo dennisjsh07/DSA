@@ -18,11 +18,6 @@ for(i = 0; i<s.length; i++){
       flag = false;
       // console.log(false);
     }
-  } else{
-    if(b.get(s[i]) !== t[i]){
-      flag = false;
-      // console.log(false);
-    }
   }
   // console.log(true);
 }
