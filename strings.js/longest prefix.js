@@ -17,6 +17,4 @@ for(i = 0; i<first.length; i++){
 
 console.log(result);
 
-
-
 // youtube link :- https://www.youtube.com/watch?v=wtOQaovlvhY
