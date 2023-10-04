@@ -2,12 +2,11 @@ let s = "badc";
 let t = "baba";
 
 if(s.length !== t.length){
-  console.log(false);
+  return (false);
 }
 
 let b = new Map();
 let c = new Set();
-
 let flag = true;
 for(i = 0; i<s.length; i++){
   if(b.get(s[i]) === undefined){
@@ -15,6 +14,11 @@ for(i = 0; i<s.length; i++){
       b.set(s[i], t[i]);
       c.add(t[i]);
     } else{
+      flag = false;
+      // console.log(false);
+    }
+  } else{
+    if(b.get(s[i]) !== t[i]){
       flag = false;
       // console.log(false);
     }
@@ -26,5 +30,6 @@ if(flag === false){
 } else{
   console.log(true);
 }
+
 
 // youtube link :- https://www.youtube.com/watch?v=ogTMIFPjNkQ
