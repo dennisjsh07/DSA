@@ -42,5 +42,5 @@ function peakValue(a){
   return a[index];
 }
 
-let arr = [4,5,6,7,0,1,2];
-console.log(peakValue(arr));
+let array = [4,5,6,7,0,1,2];
+console.log(peakValue(array));
