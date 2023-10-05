@@ -1,20 +1,23 @@
 ///----leet code link----///
 //https://leetcode.com/problems/number-of-good-pairs/
 
-var a=[1,2,3,1,1,3];
-var max_count=0;
-for(i=0;i<a.length;i++)
-{
-  var count=0;
-  for(j=0;j<a.length;j++)
-  {
-    if((a[i]===a[j]) && (i<j)) //i<j so that i should nog pair with previous number.
-    {
-      count=count+1;
-      console.log([i],[j]);
+function goodPairs(a){
+  let maxCount = 0;
+  for(i = 0; i<a.length; i++){
+    let count = 0;
+    for(j = i+1; j<a.length; j++){
+      if(a[i] === a[j]){
+        count++;
+      }
     }
+    // console.log(count);
+    maxCount += count
   }
-max_count=max_count+count;
-
+  
+  return (maxCount);
 }
-console.log(max_count);
+
+var arr = [1,2,3,1,1,3];
+
+let noOfPairs = goodPairs(arr);
+console.log(noOfPairs);

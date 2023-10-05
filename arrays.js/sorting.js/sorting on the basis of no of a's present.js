@@ -1,32 +1,39 @@
-var a=["vaibhav", "almanac" , "is" ,"fat", "button","aabaca"];
-var b=[];
-for(i=0;i<a.length;i++)
-{
-  var count=0;
-  for(j=0;j<a[i].length;j++)
-  {
-    if(a[i][j]=="a")
-    {
-      count=count+1;
+function countArray(a){
+  let b = [];
+  for(i = 0; i<a.length; i++){
+    let count = 0;
+    for(j = 0; j<a[i].length; j++){
+      if(a[i][j] === 'a'){
+        count++;
+      }
     }
-  }b.push(count);
+    b.push(count);
+  }
+  return b
 }
-console.log(b);
-console.log( )
-for(i=0;i<a.length-1;i++)
-{
-  for(j=0;j<a.length-1-i;j++)
-  {
-    if(b[j+1]>b[j] || (b[j+1]==b[j] && a[j+1].length>a[j].length))// edge case condition.
-    {
-      var temp=b[j+1];
-      b[j+1]=b[j];
-      b[j]=temp;
-      
-      var temp=a[j+1];
-      a[j+1]=a[j];
-      a[j]=temp;
+
+function sortedArray(a,c){
+  for(i = 0; i<a.length-1; i++){
+    for(j = 0; j<a.length-1-i; j++){
+      if(c[j+1] > c[j] || (c[j+1] === c[j] && a[j+1].length > a[j].length)){
+        var temp = c[j+1];
+        c[j+1] = c[j];
+        c[j] = temp;
+        
+        var temp = a[j+1];
+        a[j+1] = a[j];
+        a[j] = temp;
+      }
     }
   }
-} console.log(b);
-console.log(a);
+  
+  return (a);
+}
+
+let arr = ["vaibhav", "almanac" , "is" ,"fat", "button","aabaca"];
+
+let countArr = (countArray(arr));
+// console.log(countArr);
+
+let sortedArr = sortedArray(arr, countArr);
+console.log(sortedArr);
