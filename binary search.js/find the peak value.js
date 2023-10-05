@@ -1,4 +1,4 @@
-var a=[1,2,1,3,5,6,4];
+var a=[1,8,1,3,5,6,4];
 var low=0;
 var high=a.length-1;
 while(low<=high)

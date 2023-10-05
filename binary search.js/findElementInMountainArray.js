@@ -1,82 +1,83 @@
-function peakOfArray(){
-    var low = 0;
-    var high = mountainArr.length-1;
+function peakValue(a){
+  let low = 0;
+  let high = a.length-1;
+  
+  while(low<=high){
+    let mid = Math.floor((low+high)/2);
     
-    while(low<=high){
-      var mid = Math.floor((low+high)/2);
-      if((mid === low || mountainArr[mid]>mountainArr[mid-1]) && (mid === high || mountainArr[mid]>mountainArr[mid+1])){
-        return (mid);
-        break;
-      } else if(mid>low && mountainArr[mid-1]>mountainArr[mid]){
-        high = mid-1;
-      } else{
-        low = mid+1;
-      }
-      
+    if((mid === low || a[mid]>a[mid-1]) && (mid === high || a[mid]>a[mid+1])){
+      return a[mid];
+      break;
     }
+    else if(mid>low && a[mid-1]>a[mid]){
+      high = mid-1
     }
+    else{
+      low = mid+1;
+    }
+  }
+}
+
+function firstHalf(a){
+  let low = 0;
+  let high = peak;
+  
+  while(low<=high){
+    var mid = Math.floor((low+high)/2);
     
-    function firstHalf(){
-    var low = 0;
-    var high = peak;
-    target = 3;
-    var flag = false;
-    while(low<=high){
-      var mid = Math.floor((low+high)/2);
-      if(mountainArr[mid] === target){
-        return (mid);
-        flag = true;
-        break;
-      } else if(target<mountainArr[mid]){
-        high = mid-1;
-      } else{
-        low = mid+1;
-      }
+    if(a[mid] === target){
+      return mid;
+      break;
+    } 
+    else if(target<a[mid]){
+      high = mid - 1;
     }
-    if(flag === false){
-      return -1;
+    else{
+      low = mid + 1;
     }
+  }
+  
+  return -1;
+}
+
+function secondHalf(a){
+  let low = peak;
+  let high = a.length-1;
+  
+  while(low<=high){
+    var mid = Math.floor((low+high)/2);
+    
+    if(a[mid] === target){
+      return mid;
+      break;
+    } 
+    else if(target<a[mid]){
+      high = mid - 1;
     }
-    
-    function secondHalf(){
-    var low = peak;
-    var high = mountainArr.length-1;
-    target = 3;
-    var flag = false;
-    while(low<=high){
-      var mid = Math.floor((low+high)/2);
-      if(mountainArr[mid] === target){
-        return (mid);
-        flag = true;
-        break;
-      } else if(target<mountainArr[mid]){
-        low = mid+1;
-      } else{
-        high = mid-1;
-      }
+    else{
+      low = mid + 1;
     }
-    if(flag === false){
-      return -1;
-    }
-    }
-    
-    var mountainArr = [0,1,2,4,2,1];
-    var target = 3;
-    
-    var peak = peakOfArray(mountainArr);
-    // console.log(peak);
-    
-    var firstIndex = firstHalf(mountainArr);
-    // console.log(firstIndex);
-    
-    var secondIndex = secondHalf(mountainArr);
-    // console.log(secondIndex);
-    
-    if (firstIndex !== -1) {
-      console.log(firstIndex);
-    } else if (secondIndex !== -1) {
-      console.log(secondIndex);
-    } else {
-      console.log(-1);
-    }
-    
+  }
+  
+  return -1;
+}
+
+let arr = [0,1,2,4,2,1];
+let target = 3;
+
+let peak = peakValue(arr);
+// console.log(peak);
+let firstIndex = firstHalf(arr);
+// console.log(firstIndex);
+let secondIndex = secondHalf(arr);
+// console.log(secondIndex);
+
+if(firstIndex !== -1){
+  console.log(firstIndex);
+}
+else if(secondIndex !== -1){
+  console.log(secondIndex);
+}
+else{
+  console.log(-1);
+}
