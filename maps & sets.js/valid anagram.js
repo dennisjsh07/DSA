@@ -1,49 +1,40 @@
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
-s = "aacc";
-t = "ccac";
-
-// s = "anagram";
-// t = "nagaram";
-
-let flag = true;
-if(s.length !== t.length){
-  flag = false;
-}
-
-let d = new Map();
-let e = new Map();
-
-for(i = 0; i<s.length; i++){
-  if(d.get(s[i]) === undefined){
-    d.set(s[i], 1);
-  } else{
-    d.set(s[i], d.get(s[i])+1);
+function anagram(a, b){
+  if(a.length !== b.length){
+    return false;
   }
-  c.add(s[i]);
-}
-
-for(i = 0; i<t.length; i++){
-  if(e.get(t[i]) === undefined){
-    e.set(t[i], 1);
-  } else{
-    e.set(t[i], e.get(t[i])+1);
+  
+  let c = new Map();
+  let d = new Map();
+  
+  for(i = 0; i<a.length; i++){
+    if(c.get(a[i]) === undefined){
+      c.set(a[i], 1);
+    } else{
+      c.set(a[i], c.get(a[i])+1);
+    }
   }
+  
+  for(j = 0; j<b.length; j++){
+    if(d.get(b[j]) === undefined){
+      d.set(b[j], 1);
+    } else{
+      d.set(b[j], d.get(b[j])+1);
+    }
+  }
+  
+  for(i = 0; i<b.length; i++){
+    if(c.get(b[i]) !== d.get(b[i])){
+      return false;
+    }
+  }
+  
+  return true;
 }
 
-// console.log(d);
-// console.log(e);
+s = "anagram";
+t = "nagaram";
 
-for(i = 0; i<t.length; i++){
-  if(d.get(t[i]) !== e.get(t[i])){
-    console.log(false);
-    flag = false;
-    break;
-  } 
-}
-
-if(flag === false){
-  console.log(false);
-} else{
-  console.log(true);
-}
+let isAnagram = anagram(s,t);
+console.log(isAnagram);
