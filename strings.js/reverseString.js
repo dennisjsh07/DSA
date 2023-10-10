@@ -1,19 +1,26 @@
+function reverseString(a){
+  let x = (a.split(' '));
+  let y = [];
+  for(i = x.length-1; i>=0; i--){
+    if(x[i] !== ''){
+    // console.log(x[i]);
+    y.push(x[i]);
+    }
+  }
+  // console.log(y);
+  let str = '';
+  for(i = 0; i<y.length; i++){
+    str += y[i];
+    if(i !== y.lenggth-1){
+      str+= ' ';
+    }
+  }
+  console.log(str);
+}
+
 let s = "  hello world  ";
-let string = s.split(' ')
-let words = [];
-for(i = string.length-1 ;i>=0; i--){
-  if(string[i] !== ''){
-      words.push(string[i]);
-  }
-}
-let str = '';
-for(i = 0; i<words.length; i++){
-  str+=(words[i]);
-  if(i!==words.length-1){
-      str+=' ';
-  }
-}
-console.log(str);
+reverseString(s)
+
 
 // check for spaces
 // let b = [];
