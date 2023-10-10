@@ -1,21 +1,24 @@
-var a=["alice and bob love leetcode", "i think so too", "this is great thanks very much"];
-var max_count=0;
-for(i=0;i<a.length;i++)
-{
-  var str="";
-  var count=1;
-  for(j=0;j<a[i].length;j++)
-  {
-    str=str+(a[i][j]);
-    if(a[i][j]==" ")
-    {
-      count=count+1;
+function maxWords(a){
+  count = 0;
+  let max = 0;
+  for(i = 0; i<a.length; i++){
+    let str = '';
+    let count = 1;
+    for(j = 0; j<a[i].length; j++){
+      str+=(a[i][j]);
+      if(a[i][j] === ' '){
+        count++;
+      }
+    }
+    // console.log(str+'-->'+count);
+    if(count > max){
+      max = count;
     }
   }
-  console.log(str+"-->"+count);
-  if(count>max_count)
-  {
-    max_count=count;
-  }
+  
+  return (max);
 }
-console.log("max count is = "+max_count);
+
+var arr = ["alice and bob love leetcode", "i think so too", "this is great thanks very much"];
+let maxLength = maxWords(arr);
+console.log(maxLength);
