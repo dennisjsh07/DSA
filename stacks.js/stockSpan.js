@@ -1,23 +1,30 @@
-let s = [100, 80, 60, 70, 60, 75, 85];
-let stack = [];
-let ans = [];
-for(i = 0; i<s.length; i++){
-  while(s[stack[stack.length-1]]<=s[i]){
-    stack.pop();
+function stockSpan(a){
+  let stack = [];
+  let nge = [];
+  
+  for(i = 0; i<a.length; i++){
+    while(a[stack[stack.length-1]] <= a[i]){
+      stack.pop();
+    }
+    
+    if(stack.length === 0){
+      nge[i] = -1;
+    } else{
+      nge[i] = stack[stack.length-1];
+    }
+    
+    stack.push(i);
   }
   
-  if(stack.length === 0){
-    ans[i] = -1;
-  } else{
-    ans[i] = stack[stack.length-1];
+  // console.log(nge);
+  let ans = [];
+  for(i = 0; i<nge.length; i++){
+    ans[i] = i - nge[i];
   }
   
-  stack.push(i);
+  console.log(ans);
 }
 
-console.log(ans);
-let b = [];
-for(i = 0; i<s.length; i++){
-  b.push(i - ans[i]);
-}
-console.log(b);
+let s = [100, 80, 60, 70, 60, 75, 85];
+
+stockSpan(s);

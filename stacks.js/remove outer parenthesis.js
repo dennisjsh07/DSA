@@ -1,20 +1,26 @@
-var s = "(()())(())(()(()))"
-
-let stack = [];
-let result = '';
-
-for(i = 0; i<s.length; i++){
-  if(s[i] === '('){
-    if(stack.length>0){
-      result+=('(')
-    }
-    stack.push('(')
-  } 
-  else if(s[i] === ')'){
-    stack.pop();
-    if(stack.length>0){
-      result+=(')')
+function removeOuterParenthesis(a){
+  let stack = [];
+  let res = '';
+  
+  for(i = 0; i<a.length; i++){
+    if(a[i] === '('){
+      if(stack.length > 0){
+        res += a[i];
+      }
+      stack.push(a[i]);
+    } else{
+      if(a[i] === ")"){
+        stack.pop();
+        if(stack.length > 0){
+          res += a[i];
+        }
+      }
     }
   }
+  
+  console.log(res);
 }
-  console.log(result);
+
+var s = "(()())(())(()(()))"
+
+removeOuterParenthesis(s);
