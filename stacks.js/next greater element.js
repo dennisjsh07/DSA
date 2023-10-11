@@ -3,7 +3,7 @@ var a=[5,9,6,4,17,75,50,60,70,80];
 var ans=[];
 var stack=[];
 for(i=a.length-1;i>=0;i--)
-{
+{ 
   // step-1 : pop the stack.
   while(stack.length!=0 && stack[stack.length-1]<a[i])
   {
