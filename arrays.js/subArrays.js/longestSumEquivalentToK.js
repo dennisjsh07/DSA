@@ -5,7 +5,7 @@ function longestLength(a){
       for(j = i; j<a.length; j++){
         let str = '';
         let sum = 0;
-        for(k = i; k<=j; k++){
+        for(k = i; k<=j; k++){ 
           str +=(a[k]);
           sum +=a[k];
         }
