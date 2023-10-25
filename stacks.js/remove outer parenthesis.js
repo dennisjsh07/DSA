@@ -13,7 +13,7 @@ function removeOuterParenthesis(a){
         stack.pop();
         if(stack.length > 0){
           res += a[i];
-        }
+        } 
       }
     }
   }

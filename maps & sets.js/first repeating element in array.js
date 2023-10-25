@@ -67,7 +67,7 @@ for(i=0;i<a.length;i++)
 {
   if(b.get(a[i])>max)
   {
-    max=a[i];;
+    max=a[i];
   }
 }
 console.log(max);

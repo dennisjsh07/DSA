@@ -13,7 +13,7 @@ for(i=a.length-1;i>=0;i--)
   // step-2 : update ans.
   if(stack.length==0)
   {
-    ans[i]=-1;
+    ans[i]=-1; 
   }
   else
   {

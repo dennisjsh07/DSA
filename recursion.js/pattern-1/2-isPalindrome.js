@@ -1,3 +1,18 @@
+// parametric way...
+function palindrome(i, a){
+  if(i == Math.floor(n/2)){
+    return true;
+  }
+  
+  if(a[i] !== a[(n-1)-i]){
+    return false;
+  }
+  palindrome(i+1, a);
+  
+  return true;
+}
+
+// functional way...
 function palindrome(i, a){
     if(i == Math.floor(n/2)){
       return true;
