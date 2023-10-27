@@ -50,7 +50,7 @@ console.log(max_sum);
 
 var a=[-2,-3,4,-1,-2,1,5,-3];
 var sum=0;
-var max_sum=0;
+var max_sum=a[0];
 //to print the sub arrays.
 //var ans=[-1,-1]
 for(i=0;i<a.length;i++)
