@@ -1,114 +1,98 @@
-class node 
-{
-  static i=0;
-  constructor(value)
-  {
-    this.value=value;
-    this.next=undefined;
-    node.i=node.i+1;
+class Node{
+  static i = 0;
+  constructor(val){
+    this.val = val;
+    this.next = undefined;
+    Node.i = Node.i + 1;
   }
 }
 
-insert_start=function(head,value)
-{
-  new_node=new node(value);
-  new_node.next=head;
-  return new_node;
+function insertStart(head, val){
+  const newNode = new Node(val);
+  newNode.next = head;
+  return newNode
 }
 
-insert_end=function(head,value)
-{
- new_node=new node(value)
- temp=head;
- while(temp.next!=null)
- {
-   temp=temp.next; // giving  the increment  to the loop to reach the last node.
- }
- temp.next=new_node
-}
-
-insert_middle=function(head,n,value)
-{
-  new_node=new node(value);
-  temp=head;
-  while(n-1>0)
-  {
-    temp=temp.next;
-    n=n-1;
+function insertEnd(head,val){
+  const newNode = new Node(val)
+  let temp = head;
+  while(temp.next){
+    temp = temp.next
   }
-  x=temp.next;
-  temp.next=new_node;
-  new_node.next=x;
+  temp.next = newNode;
 }
 
-delete_end=function(head)
-{
-  temp=head;
-  while(temp.next.next!=null) //in linked list we cannot go to the previous value one we find the last value,hence we use temp.next.next.
-  {
-    temp=temp.next;
+function insertMid(head, n, val){
+  let newNode = new Node(val);
+  let temp = head;
+  while(n-1 > 0 && temp.next){
+    temp = temp.next;
+    n = n-1;
   }
-  temp.next=undefined;
+  let x = temp.next;
+  temp.next = newNode;
+  newNode.next = x;
 }
 
-delete_mid=function(head,n)
-{
-  temp=head;
-  while(n-2!=0)
-  {
-    temp=temp.next
-    n=n-1;
+function display(head){
+  let temp = head
+  while(temp){
+    console.log(temp.val);
+    temp = temp.next;
   }
-  temp.next=temp.next.next;
 }
 
-display=function(head)
-{
-  temp=head;
-  while(temp!=null )
-  {
-    console.log(temp.value)
-    temp=temp.next;
+function deleteEnd(head){
+  let temp = head;
+  while(temp.next.next){
+    temp = temp.next
   }
- 
+  temp.next = undefined;
 }
 
+function deleteMid(head,n){
+  let temp = head;
+  while(n-2 > 0 && temp.next){
+    temp = temp.next;
+    n = n-1;
+  }
+  temp.next = temp.next.next;
+}
 
-head=new node(5);
+// inserting...
+let head = new Node(5);
 
-head=insert_start(head,4);
-head=insert_start(head,3);
-head=insert_start(head,2);
-head=insert_start(head,1);
-insert_end(head,7);
-insert_end(head,8);
-insert_end(head,9);
-insert_end(head,10);
-insert_middle(head,5,6);
-insert_middle(head,6,11);
-insert_middle(head,6,12);
-head=head.next;
-head=head.next;
-head=head.next;
-delete_end(head);
-delete_end(head);
-delete_end(head);
-delete_mid(head,3);
+head = insertStart(head, 4)
+head = insertStart(head, 3)
+head = insertStart(head, 2)
+head = insertStart(head, 1)
+
+insertMid(head,6,6);
+insertMid(head,7,7);
+
+insertEnd(head, 8);
+insertEnd(head, 9);
+insertEnd(head, 10);
+
+// deleting...
+head = head.next;
+head = head.next;
+
+deleteEnd(head);
+deleteEnd(head);
+
+deleteMid(head,5);
+deleteMid(head,5);
+
+
 display(head);
-console.log( );
+// console.log(head);
 
-//also find the size of linked list.
-console.log(node.i); //length before deletion.
-
-var curr=head; //length after deletion.
-var a=0;
-while(curr)
-{
-  a=a+1;
-  curr=curr.next;
+console.log('before deletion -->',Node.i);
+let curr = head;
+let count = 0;
+while(curr){
+  count++
+  curr = curr.next;
 }
-console.log(a);
-
-
-
-
+console.log('afetr deletion -->',count);
