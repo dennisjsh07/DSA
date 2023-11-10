@@ -27,7 +27,7 @@ function twoDiff(a){
   
   for(i = 0; i<a.length; i++){
     let b = a[i];
-    let d = Math.abs(target - b);
+    let d = (target + b);
     // console.log(d);
     if(c.has(d)){
       console.log(b ,d);
