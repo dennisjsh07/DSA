@@ -1,3 +1,5 @@
+//remove the duplicates and return the length...5
+
 function removeElement(){
     // find val and intialise it to j;
     let i = 0;

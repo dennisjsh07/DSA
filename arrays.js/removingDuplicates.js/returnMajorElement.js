@@ -1,3 +1,4 @@
+// max repeated element...
 function majorityElement(){
   
     let a = new Map()

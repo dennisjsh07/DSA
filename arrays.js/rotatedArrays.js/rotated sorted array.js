@@ -13,7 +13,7 @@ for(i = 1; i<nums.length; i++){
 if(nums[n-1]>nums[0]){
   count++;
 }
-// console.log(count);
+console.log('count -->',count);
 if(count<=1){
   console.log(true);
 } else{
