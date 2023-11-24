@@ -1,26 +1,27 @@
-function validParenthesis(a){
+function removeAdjacentDups(){
   let stack = [];
   
-  for(i = 0; i<a.length; i++){
-    if(stack.length === 0){
-      stack.push(a[i]);
-    }
-    else if(stack[stack.length-1] === '(' && a[i] === ')' ||
-    stack[stack.length-1] === '{' && a[i] === '}' ||
-    stack[stack.length-1] === '[' && a[i] === ']'){
+  for(let i = 0; i<a.length; i++){
+    if(
+        (stack[stack.length-1] === '(' && a[i] === ')') ||
+        (stack[stack.length-1] === '[' && a[i] === ']') ||
+        (stack[stack.length-1] === '{' && a[i] === '}')
+       )
+       {
       stack.pop();
-    }
-    else{
+    } else{
       stack.push(a[i]);
     }
-  }
+  } 
   
-  if(stack.length === 0){
-    console.log(true);
+  if(stack.length > 0){
+    return false;
   } else{
-    console.log(false);
+    return true;
   }
 }
 
-var s="()[){}"
-validParenthesis(s);
+var a = "()[]{}"
+
+let res = removeAdjacentDups();
+console.log(res);

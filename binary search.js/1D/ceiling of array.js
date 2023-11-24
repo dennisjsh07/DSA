@@ -1,29 +1,24 @@
-// ceiling is the number which is >= the key.
-var a=[2,3,5,9,14,16,18];
-var key=17;
-// in this array if the array does not contain 17 then return element > than 17 i.e, 18;
-var low=0;
-var high=a.length-1;
-var flag=false;
-while(low<=high)
-{
-var mid=Math.floor((low+high)/2);
-if(a[mid]==key)
-{
-  console.log(a[mid]);
-  flag=true;
-  break;
+function ceiling(){
+  let low = 0;
+  let high = a.length-1;
+  while(low <= high){
+    let mid = Math.floor((low+high)/2);
+    if(a[mid] === target){
+      return a[mid];
+    } 
+    else if(target < a[mid]){
+      high = mid - 1;
+    }
+    else{
+      low = mid + 1;
+    }
+  }
+  
+  return a[low];
 }
-else if(key>a[mid])
-{
-  low=mid+1;
-}
-else
-{
-  high=mid-1
-}
-}
-if(flag==false)
-{
-  console.log(a[low]);
-}
+
+var a = [2,3,5,9,14,16,18];
+let target = 12;
+
+let res = ceiling();
+console.log(res);

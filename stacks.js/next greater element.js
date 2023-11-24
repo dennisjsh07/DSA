@@ -14,7 +14,7 @@ for(i=a.length-1;i>=0;i--)
   if(stack.length==0)
   {
     ans[i]=-1; 
-  }
+  } 
   else
   {
     ans[i]=stack[stack.length-1];

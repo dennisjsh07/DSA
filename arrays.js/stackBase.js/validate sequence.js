@@ -1,24 +1,24 @@
-function validateSequence(a,b){
-  
+function validateSequence(){
   let stack = [];
   let j = 0;
-  
-  for(i = 0; i<pushed.length; i++){
-    stack.push(a[i]);
-    while(stack[stack.length-1] === b[j] && j<popped.length){
+  for(let i = 0; i<pushed.length; i++){
+    stack.push(pushed[i]);
+    
+    while(popped[j] === stack[stack.length-1] && j < popped.length){
       stack.pop();
-      j++
+      j++;
     }
   }
   
   if(stack.length > 0){
-    console.log(false);
+    return false;
   } else{
-     console.log(true);
+    return true;
   }
 }
 
 var pushed = [1,2,3,4,5];
-var popped = [3,5,3,2,2];
+var popped = [5,4,3,2,1];
 
-validateSequence(pushed,popped);
+let res = validateSequence();
+console.log(res);

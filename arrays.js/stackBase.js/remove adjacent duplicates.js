@@ -1,28 +1,22 @@
-var a="abbaca";
-var stack=[];
-for(i=0;i<a.length;i++)
-{
-  if(stack.length==0)
-  {
-    stack.push(a[i]);
-  }
-  else if(stack[stack.length-1]==a[i])
-  {
-    stack.pop();
-  }
-  else
-  {
-    stack.push(a[i]);
-  }
+function removeAdjacentDups(){
+  let stack = [];
   
+  for(let i = 0; i<a.length; i++){
+    if(stack[stack.length-1] === a[i]){
+      stack.pop();
+    } else{
+      stack.push(a[i]);
+    }
+  } 
+  
+  return stack;
 }
-console.log(stack);
-var str=""
-for(i=0;i<stack.length;i++)
-{
-  str=str+stack[i];
-}
-console.log(str);
+
+var a = "abbaca";
+
+let res = removeAdjacentDups();
+console.log(res);
+
 
 // time complexity - O(n);
 // space complexity - (n);

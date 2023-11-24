@@ -1,24 +1,25 @@
-function greaterElement(a){
+function nextGreaterElement(){
   let low = 0;
-  let high = a.length-1;
-  while(low<=high){
-    var mid = Math.floor((low+high)/2);
-    
-    if(target>=a[mid]){
+  let high = arr.length-1;
+  while(low <= high){
+    let mid = Math.floor((low+high)/2);
+    if(arr[mid] > target){
+      return arr[mid];
+    } 
+    else if(target == arr[mid]){
       low = mid+1;
-    } else{
+    }
+    else{
       high = mid-1;
     }
   }
   
-  if(low === a.length){
-    return a[0];
-  } else{
-    return a[low];
-    }
+  return arr[0];
 }
 
 var arr = ["x","x","y","y","z"];
 var target = 'y';
 
-console.log(greaterElement(arr));
+const res = nextGreaterElement();
+console.log(res);
+
