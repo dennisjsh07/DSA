@@ -1,22 +1,21 @@
-function sellStock(){
-    let n = prices.length
-    let j = 0;
-    let max = 0;
-    for(i = 0; i<n; i++){
-      if(prices[i] <= prices[j]){
-        j = i;
-      }
-      let profit = prices[i] - prices[j];
-      // console.log(profit);
-      if(profit > max){
-        max = profit;
-      }
+function buyAndSellStocks(){
+  let j = 0;
+  let max = 0;
+  for(let i = 0; i<a.length; i++){
+    if(a[i] <a[j]){
+      j = i;
     }
     
-    console.log(max);
-    
-  
+    let profit = a[i] - a[j];
+    if(profit > max){
+      max = i;
+    }
   }
   
-  let prices =[7,6,4,3,1];
-  sellStock();
+  return a[max];
+}
+
+let a = [7,1,5,3,6,4];
+
+let res = buyAndSellStocks();
+console.log(res);
