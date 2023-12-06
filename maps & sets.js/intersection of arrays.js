@@ -30,24 +30,23 @@ for(i = 0; i<a.length; i++){
 console.log(Array.from(c));
 
 // 3) Hashing way using 2 sets;
-
-var a=[4,9,5];
-var b=[9,4,9,8,4];
-
-let c= new Set();
-let d = new Set();
-
-for(i = 0; i<a.length; i++){
-  c.add(a[i]);
-}
-
-for(i = 0; i<b.length; i++){
-  if(c.has(b[i])){
-    d.add(b[i]);
+function intersection(){
+  let s1 = new Set(a);
+  let s2 = new Set();
+  for(let i of b){
+    if(s1.has(i)){
+      s2.add(i);
+    }
   }
+  
+  return [...s2];
 }
 
-console.log(Array.from(d));
+let a = [4,9,5];
+let b = [9,4,9,8,4];
+
+let res = intersection();
+console.log(res);
 
 
 
