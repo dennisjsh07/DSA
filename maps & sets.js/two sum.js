@@ -36,3 +36,34 @@ for(i=0;i<nums.length;i++)
   }
   
 }
+
+// optimal soln
+
+function twoSum(){
+  let i = 0;
+  let j = n-1;
+  let ans = [-1, -1];
+  while(i < j){
+    let sum = nums[i] + nums[j];
+    if(sum === target){
+      ans[0] = nums[i];
+      ans[1] = nums[j];
+      return ans;
+    }
+    else if(target < sum){
+      j--;
+    }
+    else{
+      i++;
+    }
+  }
+  
+}
+
+let nums = [2,7,11,15];
+let target = 22;
+let n = nums.length;
+
+let res = twoSum();
+console.log(res);
+
