@@ -14,6 +14,7 @@ function qs(arr, low, high) {
     let j = high;
   
     while (i < j) {
+      
       while (arr[i] < pivot && i <= high - 1) {
         i++;
       }

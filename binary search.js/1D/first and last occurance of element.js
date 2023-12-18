@@ -8,7 +8,7 @@ while(low<=high)
   var mid=Math.floor((low+high)/2);
 if(a[mid]==key)
 {
-  ans[0]=(mid);
+  ans[0 ]=(mid);
   high=mid-1;
 }
 else if(key<a[mid])
