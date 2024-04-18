@@ -23,12 +23,12 @@ console.log(res);
 
 
 // find the max frequency.
-var a=[5,3,5,9,5,3, 2,1];
-var b=new Map();
+var a = [5,3,5,9,5,3, 2,1];
+var b = new Map();
 for(i=0;i<a.length;i++)
 {
 if(b.get(a[i])== undefined)
-{
+{ 
   b.set(a[i],1);
 }
 else

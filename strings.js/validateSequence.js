@@ -4,7 +4,7 @@ function validateSubSequence(){
   while(j<t.length){
     if(s[i] === t[j]){
       i++;
-    }
+    } 
     j++;
   }
   if(i === s.length){

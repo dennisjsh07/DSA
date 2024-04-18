@@ -8,5 +8,5 @@ var sec_highest=a[0];
      sec_highest=highest;
      highest=a[i];
    }
- }
+ } 
  console.log(sec_highest);
